@@ -56,4 +56,4 @@
 
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/DevLuisairton/word-master.git
+   git clone https://github.com/DevLuisairton/Word_Master.git
