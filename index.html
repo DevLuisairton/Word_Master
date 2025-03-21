@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Word Master</title>
+  <link rel="icon" href="assets/img/logo_word_master.jpg" id="logo_icon">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div id="game-container">
+      <header>
+          <div class="logo">
+              <h1>Word <span>Master</span></h1>
+          </div>
+          <div class="menu-items">
+              <button id="change-mode-btn">Modo de Jogo</button>
+              <button id="settings-btn">Configurações</button>
+          </div>
+      </header>
+
+      <div id="game-info">
+          <div class="info-box">
+              <h3>Pontuação</h3>
+              <p id="score">0</p>
+          </div>
+          <div class="info-box">
+              <h3>Tempo</h3>
+              <p id="timer">60</p>
+          </div>
+          <div class="info-box">
+              <h3>Modo</h3>
+              <p id="current-mode">Clássico</p>
+          </div>
+          <div class="info-box">
+              <h3>Palavras</h3>
+              <p id="word-count">0</p>
+          </div>
+      </div>
+
+      <div id="game-board">
+          <div id="word-display"></div>
+          
+          <div id="letter-tiles"></div>
+          
+          <div id="word-input-container">
+              <input type="text" id="word-input" placeholder="Digite uma palavra..." autocomplete="off">
+              <button id="submit-word">Enviar</button>
+              <button id="clear-word">Limpar</button>
+          </div>
+
+          <div id="power-ups">
+              <div class="power-up" id="shuffle-letters">Embaralhar</div>
+              <div class="power-up" id="add-time">+10 Seg</div>
+              <div class="power-up" id="reveal-word">Dica</div>
+          </div>
+      </div>
+
+      <div id="formed-words">
+          <h3>Palavras Formadas</h3>
+          <div class="word-list" id="word-list"></div>
+      </div>
+
+      <!-- Tela de fim de jogo -->
+      <div id="game-over" class="hidden">
+          <h2>Fim de Jogo!</h2>
+          <p id="game-result-message"></p>
+          <div id="final-score">0</div>
+          <button id="play-again">Jogar Novamente</button>
+      </div>
+  </div>
+
+  <!-- Modal de modos de jogo -->
+  <div id="game-modes" class="hidden">
+      <div id="game-modes-content">
+          <h2>Selecione o Modo de Jogo</h2>
+          <div class="mode-options">
+              <div class="mode-option selected" data-mode="classic">
+                  <h3>Clássico</h3>
+                  <p>Forme o máximo de palavras possíveis antes do tempo acabar.</p>
+              </div>
+              <div class="mode-option" data-mode="survival">
+                  <h3>Sobrevivência</h3>
+                  <p>Cada palavra adiciona tempo. Sobreviva o máximo possível.</p>
+              </div>
+              <div class="mode-option" data-mode="challenge">
+                  <h3>Desafio</h3>
+                  <p>Palavras de categorias específicas.</p>
+              </div>
+              <div class="mode-option" data-mode="multiplayer">
+                  <h3>Multiplayer</h3>
+                  <p>Compita com outros jogadores em tempo real.</p>
+              </div>
+          </div>
+          <button id="start-game">Iniciar Jogo</button>
+      </div>
+  </div>
+
+  <!-- Modal de configurações -->
+  <div id="settings" class="hidden">
+      <div id="settings-content">
+          <h2>Configurações</h2>
+          <div class="settings-option">
+              <label for="theme-toggle">Tema Escuro</label>
+              <label class="toggle-switch">
+                  <input type="checkbox" id="theme-toggle">
+                  <span class="slider"></span>
+              </label>
+          </div>
+          <div class="settings-option">
+              <label for="sound-toggle">Sons</label>
+              <label class="toggle-switch">
+                  <input type="checkbox" id="sound-toggle" checked>
+                  <span class="slider"></span>
+              </label>
+          </div>
+          <div class="settings-option">
+              <label for="difficulty">Dificuldade</label>
+              <select id="difficulty">
+                  <option value="easy">Fácil</option>
+                  <option value="medium" selected>Médio</option>
+                  <option value="hard">Difícil</option>
+              </select>
+          </div>
+          <button id="save-settings">Salvar</button>
+      </div>
+  </div>
+</body>
+</html>
